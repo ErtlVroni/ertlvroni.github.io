@@ -1,0 +1,128 @@
+\documentclass{article}
+
+\setlength{\hoffset}{-2cm}
+\setlength{\voffset}{-1.5cm}
+\addtolength{\textwidth}{4cm}
+\addtolength{\textheight}{3cm}
+%\setlength{\parindent}{0cm}
+
+\usepackage[latin1]{inputenc}
+\usepackage{amsmath, ulem, setspace, fancyhdr, nicefrac}
+\usepackage{nicefrac}
+\usepackage[T1]{fontenc}
+\usepackage[latin1]{inputenc}
+\usepackage{textcomp}
+\usepackage{lastpage}
+\usepackage{amssymb,amsfonts}
+\usepackage{latexsym}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage[all]{xy}
+\usepackage{mathrsfs}
+\usepackage{stmaryrd}
+\usepackage{oldgerm}
+\usepackage{euscript}
+\usepackage{eufrak}
+\usepackage{graphics}
+\usepackage{wrapfig}
+\usepackage{fancybox}
+\usepackage{graphicx}
+\input xy
+\xyoption{all}
+
+\theoremstyle{plain}
+\newtheorem{theo}{Theorem}
+\newtheorem{lem}[theo]{Lemma}
+\newtheorem{cor}[theo]{Corollary}
+\newtheorem{prop}[theo]{Proposition}
+\newtheorem{theodefi}[theo]{Theorem and Definition}
+\newtheorem{conj}[theo]{Conjecture}
+
+\theoremstyle{remark}
+\newtheorem{rem}[theo]{Remark}
+
+\theoremstyle{definition}
+\newtheorem{defi}[theo]{Definition}
+\newtheorem{exs}[theo]{Examples}
+\newtheorem{ex}[theo]{Example}
+\newtheorem{nota}[theo]{Notation}
+\newtheorem{para}[theo]{}
+
+\newenvironment{pr}{\textsc{Proof}}{}
+
+
+\pagestyle{fancy}
+\lhead{Math1210}
+\chead{Study guide 2}
+\rhead{18th September 2013}
+\lfoot{Ertl Veronika}
+\cfoot{\textit{University of Utah}}
+\rfoot{\textit{Mathematics Department}}
+
+\input{MathOperators}
+
+\begin{document}
+
+\subsection*{Differentiation}
+
+The first derivative at a point calculates the slope of a curve at that point. The slope oif th curve at a point is the slope of the tangent line. We can find it using limits.
+
+\begin{defi} Let $f$ be a function and $x_0$ an element of the domain. If the limit
+$$\lim_{x\rightarrow x_0}\frac{f(x)-f(x_0)}{x-x_0}$$
+exists, we call it first derivative of $f$ at the point $x_0$ and denote it by $f'(x_0)$\end{defi}
+
+Sometimes the derivative is denoted as 
+$$\frac{df}{dx}(x)\quad\text{ or }\quad D_xf(x)$$
+We say that $f$ is differentiable at $x_0$, if the above limit exists. If it is differentiable at all point of the domain, we say $f$ is differentiable. In that case, we are looking for a function $f':x\mapsto m(x)$ where $m(x)$ is the slope of $f$ at $x$. 
+
+\begin{theo} If a function is differentiable at a point, it is also continuous at this point.\end{theo}
+But the converse is not true! If a function is discontinuous, it is not differentiable at this point. It is alos not differentible at a cusp or a pole. 
+
+\subsection*{Differentiation rules}
+
+\begin{enumerate} \item Constant function rule: If $f(x)=k$ for $k\in \RR$ then
+$$f'(x)= 0$$
+\item Identity function rule: If $f(x)=x$ then
+$$f'(x)=1$$
+\item Power rule: For $f(x)=x^n$ with $n\in\NN$
+$$f'(x)=nx^{n-1}$$
+\item Constant multiple rule: If $k\in\RR$ and $f(x)$ is $f'(x)$ exists then
+$$\left(kf(x)\right)'=kf'(x)$$
+\item Sum and difference rule: If $f$ and $g$ are differentiable then
+$$(f+g)'(x) =f'(x)+g'(x)$$
+\item Square root rule: If $f(x)=\sqrt{x}$ then
+$$f'(x)=\frac{1}{2\sqrt{x}}$$
+\item Product rule: If $f$ and $g$ are differentiable then
+$$\left(f\cdot g\right)'(x)=f'(x)g(x)+g'(x)f(x)$$
+\item Quotient rule: If $f$ and $g$ are differentiable and $g(x)\neq 0$ then
+$$\left(\frac{f}{g}\right)'(x)=\frac{g(x)f'(x)-f(x)g'(x)}{g^2(x)}$$
+\item Trigonometric functions:
+\begin{eqnarray*}\sin'(x)&=&\cos(x)\\
+\cos'(x) &=& -\sin(x)\\
+\tan'(x) &=& \sec^2(x)\\
+\sec'(x) &=& \sec(x)\tan(x)\\
+\cot'(x) &=& -\csc^2(x)\\
+\csc'(x) &=& -\csc(x)\cot(x)\end{eqnarray*}
+\item Chain rule: Let $f$ and $g$ be differentiable. Then
+$$(f\circ g)'(x)=f'(g(x))\cdot g'(x)$$
+\end{enumerate}
+
+\subsection*{Higher derivatives}
+
+To get the second derivative, you need the first derivative first. THe process is recursive.
+
+\subsection*{Implicit differentiation}
+
+Given an equation $f(y)=g(x)$. This can be seen as a function $y(x)$ given implicitely. Oftentimes we cannot solve directly for $y$ in terms of $x$. But we can try to differentiate it.
+\begin{eqnarray*}\frac{d}{dx}\left(f(y)\right) &=& \frac{d}{dx}g(x)\\
+f'(y(x))y'(x) &=& g'(x)\\
+y'(x) &=& \frac{g'(x)}{f'(y)}\end{eqnarray*}
+
+\subsection*{Related Rates}
+
+
+
+
+
+
+\end{document}A

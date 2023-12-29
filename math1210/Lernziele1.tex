@@ -1,0 +1,154 @@
+\documentclass{article}
+
+\setlength{\hoffset}{-2cm}
+\setlength{\voffset}{-1.5cm}
+\addtolength{\textwidth}{4cm}
+\addtolength{\textheight}{3cm}
+%\setlength{\parindent}{0cm}
+
+\usepackage[latin1]{inputenc}
+\usepackage{amsmath, ulem, setspace, fancyhdr, nicefrac}
+\usepackage{nicefrac}
+\usepackage[T1]{fontenc}
+\usepackage[latin1]{inputenc}
+\usepackage{textcomp}
+\usepackage{lastpage}
+\usepackage{amssymb,amsfonts}
+\usepackage{latexsym}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage[all]{xy}
+\usepackage{mathrsfs}
+\usepackage{stmaryrd}
+\usepackage{oldgerm}
+\usepackage{euscript}
+\usepackage{eufrak}
+\usepackage{graphics}
+\usepackage{wrapfig}
+\usepackage{fancybox}
+\usepackage{graphicx}
+\input xy
+\xyoption{all}
+
+\theoremstyle{plain}
+\newtheorem{theo}{Theorem}%[section]
+\newtheorem{lem}[theo]{Lemma}
+\newtheorem{cor}[theo]{Corollary}
+\newtheorem{prop}[theo]{Proposition}
+\newtheorem{theodefi}[theo]{Theorem and Definition}
+\newtheorem{conj}[theo]{Conjecture}
+
+\theoremstyle{remark}
+\newtheorem{rem}[theo]{Remark}
+
+\theoremstyle{definition}
+\newtheorem{defi}[theo]{Definition}
+\newtheorem{exs}[theo]{Examples}
+\newtheorem{ex}[theo]{Example}
+\newtheorem{nota}[theo]{Notation}
+\newtheorem{para}[theo]{}
+
+\newenvironment{pr}{\textsc{Proof}}{}
+
+
+\pagestyle{fancy}
+\lhead{Math1210}
+\chead{Study guide 1}
+\rhead{18th September 2013}
+\lfoot{Ertl Veronika}
+\cfoot{\textit{University of Utah}}
+\rfoot{\textit{Mathematics Department}}
+
+\input{MathOperators}
+
+\begin{document}
+\subsection*{Functions}
+\begin{defi} A rule that assignes to each element in the domain exactly one element in the target is called a function.\end{defi}
+One writes 
+\begin{eqnarray*} f: \mathbb{D} &\rightarrow & \mathbb{T}\\ x &\mapsto& y=f(x)\end{eqnarray*}
+The expression $y=f(x)$ is called equation of function. 
+\begin{defi} A function of the form $f:x\mapsto y=mx+t$ with $m,t\in\RR$ fixed is said to be linear. $m$ and $t$ are called parameter of the function.\end{defi}
+The parameter $t$ gives the distance to the abscisse ($x$-axis) and the $y$-intercept is given by $T=(0,t)$. The parameter $m$ gives the slope of the line and we have $\tan\rho=m$, where $\rho$ is the intersection angle. 
+
+The zeros of the term $f(x)=0$ give the $x$-intercepts. 
+
+Two lines $y=f(x)$ and $y=g(x)$ have either no intersection point (if they have the same slope) or one (if they have different slopes. In the latter case one calculates the point of intersection by setting
+$$f(x)=g(x),$$
+solving this equation for $x$ and then plugging into $f$ or $g$ to solve for $y$. 
+
+A function is invertible if it is injective, meaning that for $x_1\neq x_2$ we have necessarily $f(x_1)=\neq f(x_2)$. To find the inverese of a function, solve $y=f(x)$ for $x$ and interchange $x$ and $y$. One obtains the graph of the inverse function by taking the mirror image of the graph of the original function on the diagonal of the first quadrant. 
+
+One can connect functions in in the following way:
+\begin{enumerate} \item Addition: $f(x)+g(x)= (f+g)(x)$
+\item Subtraction: $f(x)-g(x)=(f-g)(x)$
+\item Multiplication: $f(x)\cdot g(x)= f\cdot g(x)$
+\item Division: $\frac{f(x)}{g(x)}=\frac{f}{g}(x)$ for $g(x)\neq 0$. 
+\item $f\circ g(x)=f(g(x))$ In general $f\circ g\neq g\circ f$.
+\end{enumerate}
+
+\subsection*{Limits}
+
+\begin{defi} The limit of $f(x)$ as $x$ goes towards $x_0$
+$$\lim_{x\rightarrow x_0}f(x)=f(x_0)$$
+\end{defi}
+If $f$ is not defined at the place $x_0$ the limit is the continuation of $f$ at this point. A limit exists exactly if the function can be continued at this point. One says that $f$ converges to $\widetilde{f}(x_0)$ as $x$ goes to $x_0$. 
+There are right sided and left sided limits. If they coincide, the function can be continued at this point. 
+
+\subsubsection*{Limit Theorems}
+
+Assume $n\in\NN$, $k\in\RR$ and $f(x)$ and $g(x)$ have a limit as $x\rightarrow c$.
+
+\begin{enumerate} \item $\lim_{x\rightarrow c}k=k$
+\item $\lim_{x\rightarrow c}x=c$
+\item $\lim_{x\rightarrow c}kf(x)=k\lim_{x\rightarrow c}f(x)$
+\item $\lim_{x\rightarrow c}[f(x)\pm g(x)]=\lim_{x\rightarrow c}f(x)\pm\lim_{x\rightarrow c}g(x)$
+\item $\lim_{x\rightarrow c}[f(x)g(x)]=\lim_{x\rightarrow c}f(x)\cdot\lim_{x\rightarrow c}g(x)$
+\item $\lim_{x\rightarrow c}\frac{f(x)}{g(x)}=\frac{\lim_{x\rightarrow c}f(x)}{\lim_{x\rightarrow c}g(x)}$ provided $\lim_{x\rightarrow c}g(x)\neq 0$.
+\item $\lim_{x\rightarrow c}f(x)^n = [\lim_{x\rightarrow c}f(x)]^n$
+\item $\lim_{x\rightarrow c}\sqrt[n]{f(x)}=\sqrt[n]{\lim_{x\rightarrow c}f(x)}$
+\item Substitution Theorem: If $f(x)$ is a polynomial or rational function, then $\lim_{x\rightarrow c}f(x)=f(c)$ assuming $f(c)$ is defined.
+\item Squeeze Theorem: Let $f,g,h$ be functions satisfying $f(x)\leqslant g(x)\leqslant h(x)$ for all $x$ near $c$, except possibly at $x=c$. If $\lim_{x\rightarrow c}f(x)=\lim_{x\rightarrow c}h(x)=L$ then $\lim_{x\rightarrow c}g(x)=L$.
+\end{enumerate}
+
+
+
+\subsubsection*{Trigonometric limits.}
+
+\subsubsection*{Limits at infinity, infinite limits}
+
+\begin{defi} Let $f$ be defined on $[c,\infty)$ resp. $(-\infty,c]$ for some $c\in\RR$. We say that 
+$$\lim_{x\rightarrow\infty\text{ or }-\infty} f(x) = L$$
+if $\forall\epsilon>0\exists$ a corresponding number $M$ such that 
+$$x>M\quad\text{ (or }x<M) \Rightarrow |f(x)-L|<\epsilon.$$
+\end{defi}
+\begin{defi} We say that 
+$$\lim_{x\rightarrow c^+}f(x)=\infty$$
+if $\forall$ positive numbers $M\exists$ a corresponding $\delta>0$ such that
+$$0<x-c<\delta\Rightarrow f(x)>M.$$
+\end{defi}
+Similar for leftsided limits as well as $-\infty$.
+
+\subsection*{Continuity}
+
+\begin{defi} A function is contiuous at the point $x_0$ if for every $\epsilon>0$ there is $\delta>0$ such that for $|x-x_0|<\delta$ we hvae $|f(x)-f(x_0)|<\epsilon$.\end{defi}
+A function is continuous on the domain, if it is continuous at each point of the domain. One can check continuity with the limit property.
+$$\lim_{x\rightarrow x_0^+}f(x)=\lim_{x\rightarrow x_0^-}f(x)=\widetilde{f}(x_0)$$
+
+Continuous functions:
+\begin{enumerate}\item All polynomials are continuous everywhere.
+\item All rational functions are continuous where they are defined.
+\item Absolute value function is continuous.
+\item $f(x)=\sqrt[n]{x}$ is continuous
+\item Trigonometric functions are continuous.
+\item If $f$ and $g$ are continuous at $c$ then so are
+$$kf,\;f+g,\;f-g,\;fg,\;\frac{f}{g}\quad(\text{if }g(c)\neq 0),\;f^n,\;\sqrt[n]{f}.$$
+\item If $g$ is contiuous at $c$ and $f$ is continuous at $g(c)$ then $f\circ g$ is continuous at $c$.
+\end{enumerate}
+
+Intermediate Value Theorem
+\begin{theo} Let $f$ be a function defined on $[a,b]$ and $w\in[f(a),f(b)]$. If $f$ is continuous on $[a,b]$ then there exists a number $c\in[a,b]$ such that $f(c)=w$.\end{theo}
+
+
+
+
+\end{document}A
